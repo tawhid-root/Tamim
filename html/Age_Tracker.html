@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Tracker</title>
+    <link rel="icon" type="image/x-icon" href="../img/icon.png" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <link rel="stylesheet" href="../css/birthday.css" />
+  </head>
+  <body>
+    <header>
+      <button id="Menu">Menu</button>
+      <h2>GG Iam Tamim</h2>
+    </header>
+
+    <main id="main">
+      <div id="info_holder">
+        <!--html will add dinamacally by help of javascript-->
+      </div>
+
+      <h4>
+        Note:
+        <br />
+        "See other Persone birth related information Like Your"
+      </h4>
+      <button id="other_persone_btn">See other persone info</button>
+
+      <br />
+      <br />
+
+      <form action="" class="close_form" id="other_persone_form">
+        <label for="other_persone_name">Name : </label>
+        <input
+          type="text"
+          placeholder="Name"
+          id="other_persone_name"
+          class="input_normal"
+        />
+
+        <label for="other_persone_birth_year">Birth Years : </label>
+        <input
+          type="number"
+          placeholder="Birth Years"
+          id="other_persone_birth_year"
+          class="input_normal"
+        />
+
+        <label for="other_persone_birth_month">Birth Month : </label>
+        <input
+          type="number"
+          placeholder="Birth Month"
+          id="other_persone_birth_month"
+          class="input_normal"
+        />
+
+        <label for="other_persone_birth_date">Birth Date : </label>
+        <input
+          type="number"
+          placeholder="Birth Date"
+          id="other_persone_birth_date"
+          class="input_normal"
+        />
+
+        <label for="other_persone_birth_hours">Birth Hours : </label>
+        <input
+          type="number"
+          placeholder="Birth Hours"
+          id="other_persone_birth_hours"
+          class="input_normal"
+        />
+
+        <label for="other_persone_birth_minutes">Birth Minutes : </label>
+        <input
+          type="number"
+          placeholder="Birth Minutes"
+          id="other_persone_birth_minutes"
+          class="input_normal"
+        />
+
+        <label for="other_persone_birth_seconds">Birth Seconds : </label>
+        <input
+          type="number"
+          placeholder="Birth Seconds"
+          id="other_persone_birth_seconds"
+          class="input_normal"
+        />
+
+        <br />
+        <button id="other_persone_submit" type="button">Submit</button>
+      </form>
+      <br />
+    </main>
+
+    <footer>
+      <hr />
+      <h3>
+        Everytihing
+        <br />
+        caculated by milisecond
+      </h3>
+      <hr />
+    </footer>
+
+    <!-- sidebar -->
+    <section id="sidebar" class="close_sidebar">
+      <header>
+        <button id="Menu_close">Close</button>
+      </header>
+      <ol>
+        <a href="./index.html"><li>Home</li></a>
+        <a href="./Age_Tracker.html"><li class="current">Age Tracker</li></a>
+        <a href="./Social_accounts.html"><li>Social accounts</li></a>
+        <a href="./Business.html"><li>Business</li></a>
+      </ol>
+    </section>
+    <script src="../js/birthday.js"></script>
+    <script src="../js/sidebar.js"></script>
+  </body>
+</html>

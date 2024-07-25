@@ -1,0 +1,30 @@
+.open_form {
+  display: grid;
+}
+.close_form {
+  display: none;
+}
+.input_normal {
+  outline: none;
+}
+/* input empty */
+.input_empty {
+  outline: 2px solid #754991;
+  border-radius: 2px;
+}
+.input_empty::placeholder {
+  color: #754991;
+}
+
+/*input succes*/
+.input_succes {
+  outline: 2px solid #027d8d;
+  border-radius: 2px;
+}
+.input_succes::placeholder {
+  color: #027d8d;
+}
+span {
+  color: #a7dbc9;
+  font-weight: bolder;
+}

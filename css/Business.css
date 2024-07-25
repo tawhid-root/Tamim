@@ -1,0 +1,17 @@
+main div{
+    background-color: rgba(255, 255, 255, 0.09);
+    width: 100%;
+    height: fit-content;
+    border-radius: 19.99px;
+    position: relative;
+}
+
+main div ol{
+    padding: 15px;
+}
+main div ol li{
+    margin: 15px;
+    text-align: start;
+    line-height: 26px;
+    padding: 0px 6px;
+}
