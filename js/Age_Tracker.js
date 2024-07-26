@@ -98,26 +98,96 @@ let new_persone = {
   },
 
   add_persone: function () {
+    let tracker = 0;
+    function valid(Element, messages, condition) {
+      if (!Element) {
+        console.error("Element is undefined or null");
+        return;
+      }
+      if (Element === new_persone.name) {
+        if (Element.value === "") {
+          Element.classList.replace("input_normal", "input_empty");
+          Element.placeholder = messages;
+        } else {
+          Element.classList.replace("input_normal", "input_succes");
+          tracker += 1;
+        }
+      } else if (isNaN(Element.value) || condition) {
+        Element.value = "";
+        Element.placeholder = messages;
+        Element.classList.replace("input_normal", "input_empty");
+      } else {
+        Element.classList.replace("input_normal", "input_succes");
+        tracker += 1;
+      }
+    }
+
+    valid(new_persone.name, "Name is required.", new_persone.name.value === "");
+    valid(
+      new_persone.year,
+      "Please enter a valid birth year.",
+      new_persone.year.value < 1900 ||
+        new_persone.year.value > new Date().getFullYear()
+    );
+    valid(
+      new_persone.month,
+      "Please enter a valid birth month.",
+      new_persone.month.value < 1 || new_persone.month.value > 12
+    );
+    valid(
+      new_persone.date,
+      "Please enter a valid birth date.",
+      new_persone.date.value < 1 ||
+        new_persone.date.value >
+          new Date(new_persone.year.value, new_persone.month.value, 0).getDate()
+    );
+    valid(
+      new_persone.hours,
+      "Please enter valid birth hours (0-23).",
+      new_persone.hours.value < 0 || new_persone.hours.value > 23
+    );
+    valid(
+      new_persone.minutes,
+      "Please enter valid birth minutes (0-59).",
+      new_persone.minutes.value < 0 || new_persone.minutes.value > 59
+    );
+    valid(
+      new_persone.seconds,
+      "Please enter valid birth seconds (0-59).",
+      new_persone.seconds.value < 0 || new_persone.seconds.value > 59
+    );
+
     function get_birth() {
       let birth = new Date().setFullYear(
         Number(new_persone.year.value),
         Number(new_persone.month.value),
         Number(new_persone.date.value)
       );
+
       birth = new Date(birth).setHours(
         Number(new_persone.hours.value),
         Number(new_persone.minutes.value),
         Number(new_persone.seconds.value)
       );
+
       birth = new Date(birth);
       return birth;
     }
-    let obj = {
-      name: new_persone.name.value,
-      birth: get_birth(),
-    };
-    let all_persone_length = new_persone.all_persone_length();
-    all_persone[all_persone_length] = obj;
+
+    if (tracker == 7) {
+      let obj = {
+        name: new_persone.name.value,
+        birth: get_birth(),
+      };
+
+      let all_persone_length = new_persone.all_persone_length();
+      all_persone[all_persone_length] = obj;
+
+      new_persone.Show_hide_form();
+      new_persone.add_html();
+    } else {
+      console.log("Error");
+    }
   },
 
   all_persone_length: function () {
@@ -197,8 +267,6 @@ new_persone.add_html();
 new_persone.btn.addEventListener("click", new_persone.Show_hide_form);
 new_persone.submit.addEventListener("click", function () {
   new_persone.add_persone();
-  new_persone.Show_hide_form();
-  new_persone.add_html();
 });
 
 //=======setting algorithem===========
