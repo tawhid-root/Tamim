@@ -1,4 +1,4 @@
-# searchTable
+# Age Tracker
 
 ## Description
 To create this I use: "html, js and css"
